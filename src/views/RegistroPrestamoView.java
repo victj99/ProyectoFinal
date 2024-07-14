@@ -211,7 +211,7 @@ public class RegistroPrestamoView extends javax.swing.JFrame {
 
         List<String[]> librosEncontrados = Almacenamiento.instance().getLibros().stream()
                 .filter((item) -> item.getNombre().toLowerCase().contains(queryNombreLibro.toLowerCase()))
-                .map((item) -> new String[] { item.getIdStr(), item.getNombre() }).toList();
+                .map((item) -> new String[] { item.getId() + "", item.getNombre() }).toList();
 
         for (String[] item : librosEncontrados) {
             librosTableModel.addRow(item);

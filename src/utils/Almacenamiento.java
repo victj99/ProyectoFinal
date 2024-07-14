@@ -18,7 +18,7 @@ public class Almacenamiento {
 
     private static Almacenamiento instancia;
 
-    public static Map<Long, Libro> librosMap = new HashMap<>();
+    private final Map<Long, Libro> librosMap = new HashMap<>();
     private final Map<Long, Prestamo> prestamosMap = new HashMap<>();
     private final Map<String, Usuario> usuarioMap = new HashMap<>();
 
@@ -86,6 +86,18 @@ public class Almacenamiento {
         return librosMap.get(id);
     }
 
+    /**
+     * Esta función registra un nuevo libroexiste
+     * 
+     * @param item Datos del prestamo
+     */
+    public void registraLibro(Libro item) {
+        item.setId(System.currentTimeMillis());
+        librosMap.put(item.getId(), item);
+
+        guardarLibrosEnExcel();
+    }
+
     public List<Prestamo> getPrestamos() {
 
         return new ArrayList<>(prestamosMap.values());
@@ -129,6 +141,30 @@ public class Almacenamiento {
         guardarPrestamosEnExcel();
     }
 
+    public Usuario getUsuarioPorDNI(String id) {
+        if (id == null) {
+            return null;
+        }
+
+        return usuarioMap.get(id);
+    }
+
+    private void guardarLibrosEnExcel() {
+        // List<String[]> items = prestamosMap.values().stream().map((item) ->
+        // item.toExcelArray()).toList();
+        List<String[]> items = new ArrayList<>();
+
+        for (Libro item : librosMap.values()) {
+            items.add(item.toExcelArray());
+        }
+
+        try {
+            ExcelUtils.crearExcel(Constantes.NOMBRE_EXCEL_LIBROS, items);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     private void guardarPrestamosEnExcel() {
         // List<String[]> items = prestamosMap.values().stream().map((item) ->
         // item.toExcelArray()).toList();
@@ -159,11 +195,4 @@ public class Almacenamiento {
         }
     }
 
-    public Usuario getUsuarioPorDNI(String id) {
-        if (id == null) {
-            return null;
-        }
-
-        return usuarioMap.get(id);
-    }
 }

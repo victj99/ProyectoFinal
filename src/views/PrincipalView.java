@@ -92,7 +92,11 @@ public class PrincipalView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAutorViewActionPerformed
 
     private void btnLibrosViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLibrosViewActionPerformed
-        
+        var librosView = new LibrosView();
+        librosView.setLocationRelativeTo(null);
+        librosView.setVisible(true);
+
+        dispose();
     }//GEN-LAST:event_btnLibrosViewActionPerformed
 
     private void btnPrestamoViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrestamoViewActionPerformed

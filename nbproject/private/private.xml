@@ -2,6 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/Volumes/ssd/Documentos/Universidad/taller_programacion/ProyectoFinal/src/utils/ExcelUtils.java</file>
+            <file>file:/Volumes/ssd/Documentos/Universidad/taller_programacion/ProyectoFinal/src/utils/Almacenamiento.java</file>
+            <file>file:/Volumes/ssd/Documentos/Universidad/taller_programacion/ProyectoFinal/src/views/PrincipalView.java</file>
+            <file>file:/Volumes/ssd/Documentos/Universidad/taller_programacion/ProyectoFinal/src/views/RegistroPrestamoView.java</file>
+            <file>file:/Volumes/ssd/Documentos/Universidad/taller_programacion/ProyectoFinal/src/views/ListaPrestamosView.java</file>
+        </group>
     </open-files>
 </project-private>
