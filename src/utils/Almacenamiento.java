@@ -166,8 +166,6 @@ public class Almacenamiento {
     }
 
     private void guardarPrestamosEnExcel() {
-        // List<String[]> items = prestamosMap.values().stream().map((item) ->
-        // item.toExcelArray()).toList();
         List<String[]> items = new ArrayList<>();
 
         for (Prestamo item : prestamosMap.values()) {
